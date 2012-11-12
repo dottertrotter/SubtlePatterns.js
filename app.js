@@ -38,7 +38,7 @@ app.configure('development', function(){
 
 app.get('/', routes.index);
 app.get('/users', user.list);
-app.get('/test.js', function(req,res){
+app.get('/subtlepatterns.js', function(req,res){
 
   var body = '';
   body += "var patterns = " + JSON.stringify(patterns) + ";";
