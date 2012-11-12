@@ -15,7 +15,7 @@ var app = express();
 
 var patterns;
 
-var domain = "http://floating-harbor-5794.herokuapp.com/"
+var domain = "http://subtlepatternsjs.herokuapp.com/"
 //var domain = "http://0.0.0.0:3001/";
 
 app.configure(function(){
