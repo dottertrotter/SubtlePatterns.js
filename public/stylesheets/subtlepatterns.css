@@ -20,6 +20,19 @@
 #subtlepatterns div{
 	float:left;
 	padding:0 20px 0 0;
+	position: relative;
+}
+
+#subtlepatterns div a{
+	display:block;
+	position:absolute;
+	bottom:20px;
+	right:20px;
+	background:#fff;
+	height:15px;
+	width:15px;
+	text-align: center;
+	font-style: italic;
 }
 
 #subtlepatterns div img{
