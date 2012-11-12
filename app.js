@@ -15,7 +15,7 @@ var app = express();
 
 var patterns;
 
-var domain = "http://0.0.0.0:3001/"
+var domain = "http://floating-harbor-5794.herokuapp.com/"
 
 app.configure(function(){
   app.set('port', process.env.PORT || 3001);
