@@ -1,0 +1,30 @@
+#subtlepatterns{
+	position:absolute;
+	bottom:0px;
+	left:0px;
+	height:100px;
+	overflow:scroll;
+	padding:20px;
+	background:#fff;
+	width:100%;
+}
+
+#subtlepatterns h1{
+	display:block;
+	background: #666666;
+	color:#fff;
+	margin:0;
+	padding:0;
+}
+
+#subtlepatterns div{
+	float:left;
+	padding:0 20px 0 0;
+}
+
+#subtlepatterns div img{
+	height:80px;
+	width:80px;	
+	border:dotted 1px #000;
+	margin-bottom:20px;
+}
