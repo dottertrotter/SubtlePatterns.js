@@ -42,10 +42,11 @@ app.get('/users', user.list);
 app.get('/subtlepatterns.js', function(req,res){
 
   var body = '';
+  body += "var patternElement = 'html,body';";
   body += "var patterns = " + JSON.stringify(patterns) + ";";
-  body += "$('body').append('<div id=\"subtlepatterns\"></div>');";
+  body += "$('body').append('<div id=\"subtlepatterns\"><div class=\"pattern-element-container\"><input type=\"text\" value=\"html,body\" id=\"pattern-element-input\" name=\"pattern-element-input\" /> selector of element to change (i.e. a, p, .class-name, #id-name) </div></div>');";
   body += "for(i = 0; i < patterns.items.length; i++){$('#subtlepatterns').append(\"<div ><img class='test-image' src='\"+patterns.items[i].src+\"' alt='\"+patterns.items[i].name+\"' title='\"+patterns.items[i].name+\"' /><a href='\"+patterns.items[i].link+\"' target='_blank'>i</a></div>\");}";
-  body += "$('.test-image').click(function(e){$('html, body').css('background','url(\'+$(this).attr(\"src\")+\')');$('title').text($(this).attr(\"title\"));});";
+  body += "$('.test-image').click(function(e){$($('#pattern-element-input').val()).css('background','url(\'+$(this).attr(\"src\")+\')');$('title').text($(this).attr(\"title\"));});";
   body += "document.write('<link rel=\"stylesheet\" type=\"text/css\" href=\""+domain+"stylesheets/subtlepatterns.css\">');"
   res.setHeader('Content-Type', 'script/javascript');
   res.setHeader('Content-Length', body.length);
