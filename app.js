@@ -15,11 +15,11 @@ var app = express();
 
 var patterns;
 
-var domain = "http://subtlepatternsjs.herokuapp.com/"
-//var domain = "http://0.0.0.0:3001/";
+//var domain = "http://subtlepatternsjs.herokuapp.com/"
+var domain = "http://0.0.0.0:3000/";
 
 app.configure(function(){
-  app.set('port', process.env.PORT || 3001);
+  app.set('port', process.env.PORT || 3000);
   app.set('views', __dirname + '/views');
   app.set('view engine', 'ejs');
   app.use(express.favicon());
@@ -72,9 +72,6 @@ function callback (error, meta, articles){
 
   if (error) console.error(error);
   else {
-    console.log('Feed info');
-    console.log('%s - %s - %s', meta.title, meta.link, meta.xmlurl);
-    console.log('Articles');
     var i = 0;
     articles.forEach(function (article){
       
@@ -91,7 +88,7 @@ function callback (error, meta, articles){
 
       }
 
-      console.log(items[i])
+      //console.log(items[i])
 
       i++;
     });
@@ -104,4 +101,5 @@ function callback (error, meta, articles){
   }
 }
 
+// PATTERNS.XML IS THE XML VERSION OF THE SUBTLEPATTERNS RSS FEED
 feedparser.parseFile('./patterns.xml', callback);
